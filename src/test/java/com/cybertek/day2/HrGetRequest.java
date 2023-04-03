@@ -32,7 +32,7 @@ public class HrGetRequest {
   }
 
   /*
-  give accept type is application/json
+  given accept type is application/json
   when user sends get request to regions/2
   then response status code must be 200
    and content type equals to application/json
