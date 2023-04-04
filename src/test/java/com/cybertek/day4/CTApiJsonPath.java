@@ -1,6 +1,8 @@
 package com.cybertek.day4;
 
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -32,6 +34,18 @@ public class CTApiJsonPath {
                 zipCode 33222
                 using JsonPath
              */
+
+
+        Response response = given().accept(ContentType.JSON)
+                .and().queryParam("id", 2)
+                .when()
+                .get("/student/all");
+
+
+        assertEquals(200,response.statusCode());
+        assertEquals("application/json;charset=UTF-8",response.contentType());
+        assertTrue(response.headers().hasHeaderWithName("Date"));
+
 
 
     }
