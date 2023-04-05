@@ -28,7 +28,7 @@ public class HamcrestMatchersApiTest {
     @Test
     public void test1() {
         given().accept(ContentType.JSON)
-                .and().pathParam("id",15)
+                .and().pathParam("id", 15)
                 .when()
                 .get("http://54.152.217.128:8000/api/spartans/{id}")
                 .then()
@@ -36,16 +36,48 @@ public class HamcrestMatchersApiTest {
                 .and()
                 .contentType("application/json")
                 .and()
-                .body("id",equalTo(15),
-                        "name",is("Meta")
-                        ,"gender",is("Female"),
-                        "phone",is(1938695106));
-
-        
+                .body("id", equalTo(15),
+                        "name", is("Meta")
+                        , "gender", is("Female"),
+                        "phone", is(1938695106));
 
 
+    }
 
+    @DisplayName("CBTraining teacher request with chaining and matchers")
+    @Test
+    public void teacherData() {
+        given()
+                .accept(ContentType.JSON)
+                .and()
+                .pathParam("id", 3)
+                .when()
+                .get("https://api.training.cydeo.com/teacher/{id}")
+                .then()
+                .statusCode(200)
+                .and()
+                .contentType("application/json;charset=UTF-8")
+                .and()
+                .header("Date", notNullValue())
+                .and().assertThat()
+                .body("teachers[0].firstName", is("Tet"))
+                .body("teachers[0].lastName", is("DS"))
+                .body("teachers[0].gender", equalTo("Male"));
 
+    }
+
+    @DisplayName("Get request to teacher/ all and chaining")
+    @Test
+    public void teachersTest() {
+
+        given()
+                .accept(ContentType.JSON)
+                .when()
+                .get("https://api.training.cydeo.com/teacher/all")
+                .then()
+                .statusCode(200)
+                .and()
+                .body("teachers.firstName",hasItems("Valter","Mario","Porter"));
 
 
     }
