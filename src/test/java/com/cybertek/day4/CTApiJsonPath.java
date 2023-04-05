@@ -2,6 +2,7 @@ package com.cybertek.day4;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -37,15 +38,33 @@ public class CTApiJsonPath {
 
 
         Response response = given().accept(ContentType.JSON)
-                .and().queryParam("id", 2)
-                .when()
-                .get("/student/all");
+                .and().pathParam("id", 6)
+                .when().get(baseURI + "/student/{id}");
 
-
-        assertEquals(200,response.statusCode());
+        assertEquals(200, response.statusCode());
         assertEquals("application/json;charset=UTF-8",response.contentType());
         assertTrue(response.headers().hasHeaderWithName("Date"));
 
+        JsonPath jsonPath = response.jsonPath();
+
+
+        String name = jsonPath.getString("students[0].firstName");
+        String gender =jsonPath.getString("students[0].gender");
+        int batchNo=jsonPath.getInt("students[0].batch");
+        String companyName= jsonPath.getString("students[0].company.companyName");
+        String stateName=jsonPath.getString("students[0].company.address.state");
+
+
+        System.out.println("name = " + name);
+        System.out.println("gender = " + gender);
+        System.out.println("batchNo = " + batchNo);
+        System.out.println("companyName = " + companyName);
+        System.out.println("stateName = " + stateName);
+
+        assertEquals("Mike", name);
+        assertEquals("Male", gender);
+        assertEquals("Cydeo", companyName);
+        assertEquals("Virginia", stateName);
 
 
     }
