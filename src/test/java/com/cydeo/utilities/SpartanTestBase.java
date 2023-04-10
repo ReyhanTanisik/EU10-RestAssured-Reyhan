@@ -1,4 +1,4 @@
-package com.cybertek.utilities;
+package com.cydeo.utilities;
 
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterAll;
@@ -19,12 +19,12 @@ public class SpartanTestBase {
         String dbUsername="SP";
         String dbPassword="SP";
 
-        DBUtils.createConnection(dbUrl,dbUsername,dbPassword);
+        //DBUtils.createConnection(dbUrl,dbUsername,dbPassword);
 
     }
 
     @AfterAll
     public static void teardown(){
-        DBUtils.destroy();
+       // DBUtils.destroy();
     }
 }

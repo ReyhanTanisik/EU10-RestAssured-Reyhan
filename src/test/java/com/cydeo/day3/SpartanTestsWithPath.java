@@ -1,4 +1,4 @@
-package com.cybertek.day3;
+package com.cydeo.day3;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;

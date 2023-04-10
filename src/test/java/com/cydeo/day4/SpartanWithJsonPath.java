@@ -1,6 +1,6 @@
-package com.cybertek.day4;
+package com.cydeo.day4;
 
-import com.cybertek.utilities.SpartanTestBase;
+import com.cydeo.utilities.SpartanTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;

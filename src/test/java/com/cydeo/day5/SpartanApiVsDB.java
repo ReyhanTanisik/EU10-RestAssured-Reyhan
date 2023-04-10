@@ -1,7 +1,7 @@
-package com.cybertek.day5;
+package com.cydeo.day5;
 
-import com.cybertek.utilities.DBUtils;
-import com.cybertek.utilities.SpartanTestBase;
+import com.cydeo.utilities.DBUtils;
+import com.cydeo.utilities.SpartanTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;

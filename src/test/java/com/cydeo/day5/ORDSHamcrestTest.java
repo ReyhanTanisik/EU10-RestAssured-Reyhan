@@ -1,6 +1,6 @@
-package com.cybertek.day5;
+package com.cydeo.day5;
 
-import com.cybertek.utilities.HrTestBase;
+import com.cydeo.utilities.HrTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import org.junit.jupiter.api.DisplayName;
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.Matchers.*;
 import  static io.restassured.RestAssured.*;
 import static org.hamcrest.MatcherAssert.*;
-import static org.hamcrest.Matchers.*;
+
 import java.util.Arrays;
 import java.util.List;
 

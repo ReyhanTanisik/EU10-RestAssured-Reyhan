@@ -1,6 +1,6 @@
-package com.cybertek.day4;
+package com.cydeo.day4;
 
-import com.cybertek.utilities.HrTestBase;
+import com.cydeo.utilities.HrTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;

@@ -1,4 +1,4 @@
-package com.cybertek.day3;
+package com.cydeo.day3;
 
 
 import io.restassured.RestAssured;
@@ -8,7 +8,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.*;
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,4 +1,4 @@
-package com.cybertek.utilities;
+package com.cydeo.utilities;
 
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;
